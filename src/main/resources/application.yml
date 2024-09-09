@@ -1,0 +1,56 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}  # Use 'dev' profile by default if not explicitly set
+
+logging:
+  config: classpath:logback-spring.xml  # Specify custom logging configuration file
+
+# Swagger and API Docs settings
+springdoc:
+  api-docs:
+    path: /api-docs  # Path to API docs
+  swagger-ui:
+    path: /swagger-ui.html  # Path to Swagger UI
+
+# Default configuration for all profiles
+server:
+  port: 8080  # Default port unless overridden by profiles
+
+---
+# Dev Profile
+spring:
+  config:
+    activate:
+      on-profile: dev  # Activate this section when 'dev' profile is active
+  main:
+    allow-bean-definition-overriding: true  # Allow overriding beans in dev environment
+    sources: com.retailer.ordermanagement.harness.OrderManagementHarness  # Harness as the main class in dev
+  security:
+    user:
+      name: user  # Default admin username
+      password: password  # Default admin password
+
+---
+# Prod Profile
+spring:
+  config:
+    activate:
+      on-profile: prod  # Activate this section when 'prod' profile is active
+  main:
+    allow-bean-definition-overriding: true  # Allow overriding beans in prod environment
+    sources: com.retailer.ordermanagement.OrderManagementServiceApplication  # Main service class in prod
+  security:
+    user:
+      name: user  # Default admin username
+      password: password  # Default admin password
+---
+# Test Profile
+spring:
+  config:
+    activate:
+      on-profile: test
+  main:
+    allow-bean-definition-overriding: true
+
+
+
