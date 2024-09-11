@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:dev}  # Use 'dev' profile by default if not explicitly set
+    active: ${SPRING_PROFILES_ACTIVE:harness}  # Use 'dev' profile by default if not explicitly set
 
 logging:
   config: classpath:logback-spring.xml  # Specify custom logging configuration file
@@ -17,11 +17,11 @@ server:
   port: 8080  # Default port unless overridden by profiles
 
 ---
-# Dev Profile
+# Harness Profile
 spring:
   config:
     activate:
-      on-profile: dev  # Activate this section when 'dev' profile is active
+      on-profile: harness  # Activate this section when 'dev' profile is active
   main:
     allow-bean-definition-overriding: true  # Allow overriding beans in dev environment
     sources: com.retailer.ordermanagement.harness.OrderManagementHarness  # Harness as the main class in dev
@@ -43,14 +43,5 @@ spring:
     user:
       name: user  # Default admin username
       password: password  # Default admin password
----
-# Test Profile
-spring:
-  config:
-    activate:
-      on-profile: test
-  main:
-    allow-bean-definition-overriding: true
-
 
 

@@ -52,7 +52,7 @@ checkstyle {
 task runHarness(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'com.retailer.ordermanagement.harness.OrderManagementHarness'
-    args = ['--spring.profiles.active=dev']
+    args = ['--spring.profiles.active=harness']
 }
 
 task runMain(type: JavaExec) {

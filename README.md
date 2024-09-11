@@ -70,7 +70,7 @@ docker run -p 8080:8080 order-management-service
 ### Customizing the Profile
 To run the harness or main application using Docker with specific profiles, you can override the active profile using environment variables:
 ```bash
-docker run -p 8080:8080 -e SPRING_PROFILES_ACTIVE=dev order-management-service
+docker run -p 8080:8080 -e SPRING_PROFILES_ACTIVE=prod order-management-service
 ```
 
 ## Configuration

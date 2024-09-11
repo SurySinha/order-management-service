@@ -18,7 +18,7 @@ import java.util.Map;
 @SpringBootApplication
 @RestController
 @RequestMapping("/api/v1/orders")
-@Profile("dev")
+@Profile("harness")
 public class OrderManagementHarness {
 
     private final Map<Long, OrderDTO> orderDTOHashMap = MockOrderUtil.populateOrderList(new HashMap<>());

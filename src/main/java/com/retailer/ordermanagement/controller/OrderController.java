@@ -5,7 +5,6 @@ import com.retailer.ordermanagement.service.OrderService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,7 +22,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/orders")
 @Tag(name = "Order Management", description = "APIs for managing orders")
-@Profile("prod")
 public class OrderController {
 
     private final OrderService orderService;

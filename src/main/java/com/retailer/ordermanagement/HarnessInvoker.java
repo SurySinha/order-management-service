@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Profile;
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.retailer.ordermanagement.harness"})
 @Import(OpenApiConfig.class)
-@Profile("dev")
+@Profile("harness")
 public class HarnessInvoker {
 
     public static void main(String[] args) {
